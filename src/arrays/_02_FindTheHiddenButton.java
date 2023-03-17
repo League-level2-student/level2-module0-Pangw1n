@@ -35,7 +35,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//3.  Ask the user to enter a positive number and convert it to an int
 		int inputNumber = Integer.parseInt(JOptionPane.showInputDialog("Input a positive integer"));
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
-		JButton[] buttons = new JButton[inputNumber];
+		buttons = new JButton[inputNumber];
 		//5. Make a for loop to iterate through the JButton array
 		for (int i = 0; i < buttons.length; i++)
 		{
@@ -73,7 +73,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton buttonClicked = (JButton)e.getSource();
+		JButton buttonClicked = (JButton) e.getSource();
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
 		if (buttonClicked == buttons[hiddenButton])
