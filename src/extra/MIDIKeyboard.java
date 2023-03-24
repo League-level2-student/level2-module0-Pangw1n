@@ -37,11 +37,12 @@ public class MIDIKeyboard implements KeyListener{
 		noteLabel.setHorizontalAlignment(JLabel.CENTER);
 		JFrame frame = new JFrame();
 		// 1. Set the default close operation of your JFrame to JFrame.EXIT_ON_CLOSE
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 2. Add a key listener to your JFrame
-
+		frame.addKeyListener(this);
 		// 3. Set your frame to be visible
-
+		frame.setVisible(true);
+		
 		frame.add(noteLabel);
 		frame.setPreferredSize(new Dimension(500,500));
 		frame.pack();
@@ -55,20 +56,23 @@ public class MIDIKeyboard implements KeyListener{
 		System.out.println(keyCode);
 		
 		// 4. if keyboardRowQtoP contains keyCode...
-
+		if (keyboardRowQtoP.contains(keyCode))
+		{
 			// 5. call playNote() with keyCode, keyboardRowQtoP, and piano as the arguments
-
-
+			playNote(keyCode, keyboardRowQtoP, piano);
+		}
 		// 9. if keyboardRowAtoL contains keyCode...
-
+		if (keyboardRowAtoL.contains(keyCode))
+		{
 			// 10. call playNote() with keyCode, keyboardRowAtoL, and piano as the arguments
-
-
+			playNote(keyCode, keyboardRowAtoL, piano);
+		}
 		// 13. if keyboardRowZtoM contains keyCode...
-
+		if (keyboardRowZtoM.contains(keyCode))
+		{
 			// 14. call playNote() with keyCode, keyboardRowZtoM, and drums as the arguments
-
-
+			playNote(keyCode, keyboardRowZtoM, drums);
+		}
 	}
 
 	@Override
@@ -77,20 +81,24 @@ public class MIDIKeyboard implements KeyListener{
 		lastKey = 0;
 		
 		// 6. if keyboardRowQtoP contains keyCode...
-
+		if (keyboardRowQtoP.contains(keyCode))
+		{
 			// 7. call stopNote() with keyCode, keyboardRowQtoP, and piano as the arguments
-
+			stopNote(keyCode, keyboardRowQtoP, piano);
+		}
 		// 8. Run your program. Does it play notes when you press a key between Q and P on your keyboard?
 		// 11. if keyboardRowAtoL contains keyCode...
-
+		if (keyboardRowAtoL.contains(keyCode))
+		{
 			// 12. call stopNote() with keyCode, keyboardRowAtoL, and piano as the arguments
-
-		
+			stopNote(keyCode, keyboardRowAtoL, piano);
+		}
 		// 15. if keyboardRowZtoM contains keyCode...
-
+		if (keyboardRowZtoM.contains(keyCode))
+		{
 			// 16. call stopNote() with keyCode, keyboardRowZtoM, and drums as the arguments
-
-		
+			stopNote(keyCode, keyboardRowZtoM, drums);
+		}
 		
 	}
 	
